@@ -1,0 +1,37 @@
+#user-container {
+  margin: 68px 90px 0 107px;
+}
+.welcome {
+    text-align: left;
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    
+  }
+}
+.welcome-user {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 24px;
+  span {
+    color: red !important;
+  }
+}
+
+.uHstack{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .ChartGrid{
+        display:flex
+    }
+    .infoCardGrid{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 39px;
+    }
+}
