@@ -4,6 +4,7 @@ import AppLayout from '../../Components/AppLayout';
 import { UserContext } from '../../context/UserContext';
 import './UserPage.scss';
 import InfoCard from '../../Components/InfoCard';
+import ActivityBarchart from '../../Components/ActivityBarChart';
 
 // Define the type of props
 type Props = {};
@@ -26,6 +27,7 @@ const UserPage = (props: Props) => {
         <div className="uHstack">
           <div className="ChartGrid">
             {/* Display user's progress chart */}
+            <ActivityBarchart sessions={currentUser.activity?.sessions}/>
           </div>
           <div className="infoCardGrid">
             {/* Display user's key data using InfoCard component */}
