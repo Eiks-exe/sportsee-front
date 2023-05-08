@@ -27,7 +27,9 @@
     width: 100%;
     gap: 31px;
     .ChartGrid{
-        display:flex
+        display:flex;
+        flex-direction: column;
+        gap: 30px;
     }
     .infoCardGrid{
         display: flex;
@@ -35,4 +37,10 @@
         flex-direction: column;
         gap: 39px;
     }
+}
+
+.chart-row{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }

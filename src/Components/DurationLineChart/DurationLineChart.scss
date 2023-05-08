@@ -1,0 +1,23 @@
+.cardChartContainer {
+    height: 263px;
+    width: 258px;
+    border-radius: 5px;
+    background: #FF0000;
+   
+}
+
+.duration-title {
+    position: absolute;
+    margin: 29px 0 0 29px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    /* or 160% */
+    width: 150px;
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
