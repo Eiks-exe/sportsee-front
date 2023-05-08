@@ -5,12 +5,13 @@ import { UserContext } from '../../context/UserContext';
 import './UserPage.scss';
 import InfoCard from '../../Components/InfoCard';
 import ActivityBarchart from '../../Components/ActivityBarChart';
+import DurationLineChart from '../../Components/DurationLineChart';
 
 // Define the type of props
 type Props = {};
 
 // Define the UserPage component
-const UserPage = (props: Props) => {
+const UserPage: React.FC<Props> = (props) => {
   // Get the current user from UserContext using React's useContext hook
   const currentUser = React.useContext(UserContext);
 
@@ -28,6 +29,12 @@ const UserPage = (props: Props) => {
           <div className="ChartGrid">
             {/* Display user's progress chart */}
             <ActivityBarchart sessions={currentUser.activity?.sessions}/>
+            <div className="chart-row">
+              <DurationLineChart sessions={currentUser.avgSession?.sessions}/>
+              <DurationLineChart sessions={currentUser.avgSession?.sessions}/>
+              <DurationLineChart sessions={currentUser.avgSession?.sessions}/>
+
+            </div>
           </div>
           <div className="infoCardGrid">
             {/* Display user's key data using InfoCard component */}
