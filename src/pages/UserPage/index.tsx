@@ -6,6 +6,7 @@ import './UserPage.scss';
 import InfoCard from '../../Components/InfoCard';
 import ActivityBarchart from '../../Components/ActivityBarChart';
 import DurationLineChart from '../../Components/DurationLineChart';
+import PerfRadarChart from '../../Components/PerfRadarChart';
 
 // Define the type of props
 type Props = {};
@@ -31,7 +32,7 @@ const UserPage: React.FC<Props> = (props) => {
             <ActivityBarchart sessions={currentUser.activity?.sessions}/>
             <div className="chart-row">
               <DurationLineChart sessions={currentUser.avgSession?.sessions}/>
-              <DurationLineChart sessions={currentUser.avgSession?.sessions}/>
+              <PerfRadarChart data={currentUser.performance}/>
               <DurationLineChart sessions={currentUser.avgSession?.sessions}/>
 
             </div>
