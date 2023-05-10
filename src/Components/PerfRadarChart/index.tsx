@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveContainer, RadarChart, PolarAngleAxis, PolarGrid, Radar, Label } from 'recharts';
+import { ResponsiveContainer, RadarChart, PolarAngleAxis, PolarGrid, Radar } from 'recharts';
 import { IUserPerformance } from '../../interfaces/IUser';
 
 interface Props {
