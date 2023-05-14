@@ -19,10 +19,11 @@ type Props = {
 // Define the UserPage component
 const UserPage: React.FC<Props> = (props) => {
   const {id} = useParams()
+  let IntId = 12
   if (id){
-    
-  } 
-  let {user, isLoading, error}= useUserContext(12, true, true, true)
+    IntId = parseInt(id)
+  }
+  let {user, isLoading, error}= useUserContext(IntId, true, true, true)
   const currentUser= user
   return currentUser?.main ? (
       <AppLayout>
