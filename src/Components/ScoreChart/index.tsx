@@ -9,11 +9,14 @@ const index: React.FC<Props> = ({ score }) => {
     return (
         <div className="cardChartContainer" style={{
             background: "#FBFBFB",
-            display:"flex"
+            display:"flex",
+            alignItems:"center",
+            position:"relative"
         }}>
             <div id="score-title" style={{
                 position:"absolute",
                 margin:"19px 24px 0 30px",
+                top:"0",
                 fontWeight:"500",
                 color:"black"
             }}>
@@ -37,7 +40,7 @@ const index: React.FC<Props> = ({ score }) => {
                         dataKey="score"
                         nameKey="name"
                         cx="50%"
-                        cy="50%"
+                        cy="48%"
                         innerRadius={ 45}
                         outerRadius={ 55}
                         startAngle={90}
@@ -49,14 +52,13 @@ const index: React.FC<Props> = ({ score }) => {
             </ResponsiveContainer>
                 <div id="score" style={{
                     position:"absolute",
-                    margin:"5% 0 0 6%",                    
+                    right:"50%" ,            
                     width:"5%"
                     
                 }}>
                     <p style={{
                         fontWeight:"700",
-                        fontSize:"24"
-                        
+                        fontSize:"24", 
                     }}>
                         {score}
                         % 

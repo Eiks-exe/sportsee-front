@@ -37,6 +37,14 @@
         flex-direction: column;
         gap: 39px;
     }
+    @media (max-width:1024px){
+      flex-direction: column-reverse;
+      .infoCardGrid{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+    }
 }
 
 .chart-row{

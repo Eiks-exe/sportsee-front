@@ -1,7 +1,8 @@
 .card-container {
     display: flex;
     flex-direction: row;
-    width: 258px;
+    min-width: 258px;
+    width: 100%;
     height: 124px;
     justify-content: space-around;
     align-items: center;
@@ -28,6 +29,10 @@
                 line-height: 24px;
             }
         }
+    }
+
+    @media (max-width:1024px){
+        min-width: unset;
     }
 
 }

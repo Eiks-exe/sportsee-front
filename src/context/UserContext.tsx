@@ -29,34 +29,48 @@ export const UserContextProvider: React.FC<IDataContextProvider> = ({ children, 
 }
 
 
-type TUserContext = {user?: IUser, isLoading?: boolean, error?: Error};
-
-export const useUserContext = (
+type TUserContext = {
+    user?: IUser;
+    isLoading?: boolean;
+    error?: Error;
+  };
+  
+  export const useUserContext = (
     id: number,
     hasActivity?: boolean,
     hasAvgSession?: boolean,
-    hasPerformance?: boolean,
-) => {
-    const [context, setContext] = React.useContext(UserContext)
-    const [user, setUser] = React.useState<IUser>()
+    hasPerformance?: boolean
+  ): TUserContext => {
+    const [context, setContext] = React.useContext(UserContext);
+    const [user, setUser] = React.useState<IUser>();
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
     const [error, setError] = React.useState<Error | undefined>();
+  
     React.useEffect(() => {
-        if (context.user) {
-            setUser(context.user);
-        } else if (!isLoading && !error) {
-            setIsLoading(true);
-            (async () => {
-                try {
-                    const { main, activity, avgSession, performance } = await getUserFromApi(id, hasActivity, hasAvgSession, hasPerformance);
-                    setContext({ main, activity, avgSession, performance } as IUser)
-                } catch (error) {
-                    setIsLoading(false)
-                    setError(error as Error)
-                }
-            })();
-        }
-    }, [context.user, id, hasActivity, hasAvgSession, hasPerformance]);
-
-    return {user, isLoading , error};
-}
+      if (context.user) {
+        // If the user context is already available, set the user state
+        setUser(context.user);
+      } else if (!isLoading && !error) {
+        setIsLoading(true);
+        (async () => {
+          try {
+            // Fetch user data from the API
+            const { main, activity, avgSession, performance } = await getUserFromApi(
+              id,
+              hasActivity,
+              hasAvgSession,
+              hasPerformance
+            );
+            // Set the user context with the fetched data
+            setContext({ main, activity, avgSession, performance } as IUser);
+          } catch (error) {
+            // Handle any errors that occur during the API request
+            setIsLoading(false);
+            setError(error as Error);
+          }
+        })();
+      }
+    }, [context.user, id, hasActivity, hasAvgSession, hasPerformance, setContext, isLoading, error]);
+  
+    return { user, isLoading, error };
+  };
