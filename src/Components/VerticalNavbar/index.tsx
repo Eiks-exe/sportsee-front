@@ -9,7 +9,7 @@ const VerticalNavbar = (props: Props) => {
             display:"flex",
             flexDirection:"column",
             alignItems:"center",
-            minHeight:"100%",
+            minHeight:"165%",
             background:"black",
             minWidth: "117px",
 

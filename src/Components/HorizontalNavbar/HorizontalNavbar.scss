@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: space-between;
     @media (max-width: 1024px) {
-        padding: 0 49px 0 29px;
-
+        padding: 0 49px 0 0px;
+        width: 95%;
     }
 }
 
@@ -23,7 +23,7 @@
     /* identical to box height, or 100% */
     color: #FFFFFF;
     text-decoration: none !important; 
-
+    
     &:hover {
         text-decoration: underline !important;
     }

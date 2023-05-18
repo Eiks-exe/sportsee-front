@@ -1,7 +1,7 @@
 // Import React library and necessary components and styles
 import React from 'react';
 import AppLayout from '../../Components/AppLayout';
-import {useUserContext } from '../../context/UserContext';
+import { useUserContext } from '../../context/UserContext';
 import './UserPage.scss';
 import InfoCard from '../../Components/InfoCard';
 import ActivityBarchart from '../../Components/ActivityBarChart';
@@ -9,23 +9,28 @@ import DurationLineChart from '../../Components/DurationLineChart';
 import PerfRadarChart from '../../Components/PerfRadarChart';
 import ScoreChart from '../../Components/ScoreChart';
 import { useParams } from 'react-router-dom';
+import NotFound from '../NotFound/NotFound';
 
-// Define the type of props
-type Props = {
- 
-};
+/**
+ * Props for UserPage component
+ */
+type Props = {};
 
-// Define the UserPage component
+/**
+ * UserPage component
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} UserPage component JSX element
+ */
 const UserPage: React.FC<Props> = (props) => {
   // Get the user ID from the URL parameters
-  const {id} = useParams();
+  const { id } = useParams();
   let IntId = 12;
-  if (id){
+  if (id) {
     IntId = parseInt(id);
   }
 
   // Fetch the user data using the UserContext
-  let {user} = useUserContext(IntId, true, true, true);
+  let { user } = useUserContext(IntId, true, true, true, "remote");
   const currentUser = user;
 
   // Render the component once the user data is available
@@ -58,7 +63,11 @@ const UserPage: React.FC<Props> = (props) => {
         </div>
       </div>
     </AppLayout>
-  ) : (<></>);
+  ) : (
+    <>
+      <NotFound />
+    </>
+  );
 };
 
 // Export the UserPage component

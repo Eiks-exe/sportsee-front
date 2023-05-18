@@ -14,11 +14,6 @@ Open [http://localhost:3000/user/12](http://localhost:3000/user/12) to view it i
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -29,4 +24,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### Mode
 
+You can change the way of getting data (using the api or the mock data) by going into: 
+``./src/pages/UserPage.tsx``
+
+then change the function call at line 33 
+from `  let { user } = useUserContext(IntId, true, true, true, "remote");` 
+to `  let { user } = useUserContext(IntId, true, true, true, "local");`
+
+then open [http://localhost:3000/user/12](http://localhost:3000/user/12)
