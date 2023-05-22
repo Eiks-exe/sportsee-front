@@ -1,0 +1,22 @@
+#score {
+    position: absolute;
+    left: calc(50% - (95px / 2));
+    width: 95px;
+
+    p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 26px;
+        color: #282D30;
+    }
+    sub {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #74798C;
+    }
+}

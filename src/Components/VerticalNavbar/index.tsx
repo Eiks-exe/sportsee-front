@@ -1,4 +1,5 @@
 import React from 'react'
+import './index.scss'
 
 type Props = {}
 
@@ -9,7 +10,6 @@ const VerticalNavbar = (props: Props) => {
             display:"flex",
             flexDirection:"column",
             alignItems:"center",
-            minHeight:"165%",
             background:"black",
             minWidth: "117px",
 
@@ -22,10 +22,10 @@ const VerticalNavbar = (props: Props) => {
             marginTop:"170%",
 
         }}>
-            <img src="/ressources/meditation-icon.svg" alt="#" width={64}/>
-            <img src="/ressources/swim-icon.svg" alt="#" width={64}/>
-            <img src="/ressources/bicycle-icon.svg" alt="#" width={64}/>
-            <img src="/ressources/dumbel-icon.svg" alt="#" width={64}/>
+            <img className='v_img' src="/ressources/meditation-icon.svg" alt="#" width={64}/>
+            <img className='v_img' src="/ressources/swim-icon.svg" alt="#" width={64}/>
+            <img className='v_img' src="/ressources/bicycle-icon.svg" alt="#" width={64}/>
+            <img className='v_img' src="/ressources/dumbel-icon.svg" alt="#" width={64}/>
         </div>
     </div>
   )

@@ -1,8 +1,8 @@
 #user-container {
   margin: 68px 90px 0 107px;
-  @media (max-width:1024px) {
-  margin: 10% 90px 0 15%;
-    
+  @media (max-width:1440px) {
+  //margin: 10% 90px 0 15%;
+    margin: 1% 2%;
   }
 }
 .welcome {
@@ -41,7 +41,7 @@
         flex-direction: column;
         gap: 39px;
     }
-    @media (max-width:1024px){
+    @media (max-width:1440px){
       flex-direction: column-reverse;
       .infoCardGrid{
         flex-direction: row;

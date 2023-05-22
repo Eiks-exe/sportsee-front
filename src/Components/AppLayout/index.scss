@@ -1,0 +1,11 @@
+.main_app_layout {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 91px);
+}
+
+.app_container {
+    @media (min-height:900px) {
+        height: 100vh;
+    }
+}

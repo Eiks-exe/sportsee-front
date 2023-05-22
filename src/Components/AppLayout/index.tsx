@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import HorizontalNavbar from '../HorizontalNavbar'
 import VerticalNavbar from '../VerticalNavbar'
+import './index.scss'
 
 interface Props {
     children?: ReactNode
@@ -9,15 +10,9 @@ interface Props {
 const AppLayout: React.FC<Props> = ({ children }) => {
     return (
 
-        <div className="app_container" style={{
-            height:"100vh"
-        }}>
+        <div className="app_container">
             <HorizontalNavbar />
-            <div style={{
-                display: "flex",
-                flexDirection: "row",
-                height:"100%"
-            }}>
+            <div className='main_app_layout'>
                 <VerticalNavbar />
                 {children}
             </div>
